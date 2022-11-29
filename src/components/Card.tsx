@@ -1,44 +1,49 @@
-import * as React from 'react';
+import React, {memo} from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 import FastImage from 'react-native-fast-image';
 import {normalize, SCREEN_HEIGHT, SCREEN_WIDTH} from '../constants/utils';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Material from 'react-native-vector-icons/Feather';
 
-interface CardProps {}
+interface CardProps {
+  author: string;
+  ups: number;
+  num_comments: number;
+  title: string;
+  thumbnail: string;
+}
 
 const Card = (props: CardProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.TopContainer}>
         <Text style={styles.textType}>TECNOLOGY</Text>
-        <Text style={styles.textSpam}>* r / gadgets</Text>
+        <Text style={styles.textSpam}>* {props.author}</Text>
         <Text style={styles.textSpam}>* two days ago</Text>
       </View>
       <View style={styles.bodyContainer}>
         <Text numberOfLines={2} style={styles.textTitle}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-          libero reprehenderit quibusdam nam officiis eum qui dignissimos
-          recusandae odit possimus. Neque consectetur voluptatum est ex officia
-          possimus at autem delectus?
+          {props.title}
         </Text>
         <FastImage
           style={styles.image}
-          source={require('../../assets/image/mockImage.jpeg')}
+          source={{
+            uri: props.thumbnail,
+          }}
         />
       </View>
       <View style={styles.bottomContainer}>
         <View style={styles.iconContainer}>
           <Icon name={'heart'} color={'#fd4500'} size={normalize(18)} />
-          <Text>1.5k</Text>
+          <Text style={styles.iconText}>{props.ups}</Text>
         </View>
         <View style={styles.iconContainer}>
           <Material size={normalize(18)} color="gray" name="message-circle" />
-          <Text>592</Text>
+          <Text style={styles.iconText}>{props.num_comments}</Text>
         </View>
         <View style={styles.iconContainer}>
           <Material name="share" size={normalize(18)} color="gray" />
-          <Text>shared</Text>
+          <Text style={styles.iconText}>shared</Text>
         </View>
         <Material size={normalize(18)} color="gray" name="gift" />
       </View>
@@ -46,7 +51,7 @@ const Card = (props: CardProps) => {
   );
 };
 
-export default Card;
+export default memo(Card);
 
 const styles = StyleSheet.create({
   container: {
@@ -96,5 +101,10 @@ const styles = StyleSheet.create({
   iconContainer: {
     flexDirection: 'row',
     alignItems: 'center',
+  },
+  iconText: {
+    paddingLeft: normalize(5),
+    fontSize: normalize(12),
+    color: 'gray',
   },
 });

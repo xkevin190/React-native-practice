@@ -5,20 +5,13 @@ export interface IAplicationState {
 }
 
 export type item = {
-  id: number;
-  width: number;
-  height: number;
-  urls: {large: string; regular: string; raw: string; small: string};
-  color: string | null;
-  likes: number;
-  description: string;
-  index?: number;
-  user: {
-    bio: string;
-    username: string;
-    name: string;
-    links: {photos: string};
-    profile_image: {large: string; medium: string; small: string};
+  data: {
+    id: string;
+    author: string;
+    ups: number;
+    num_comments: number;
+    title: string;
+    thumbnail: string;
   };
 };
 

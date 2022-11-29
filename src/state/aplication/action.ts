@@ -6,12 +6,10 @@ export const getImages = () => async (dispatch: any) => {
     url: 'https://api.reddit.com/r/pics/hot.json',
   });
 
-  // console.log(result);
-
   if (result.status === 200) {
     dispatch({
       type: ActionTypes.GET_ITEMS,
-      payload: result.data.results,
+      payload: result.data.data.children,
     });
   }
 };

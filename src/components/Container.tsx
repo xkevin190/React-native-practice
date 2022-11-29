@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {StyleSheet, SafeAreaView, View, Platform} from 'react-native';
-import {SCREEN_HEIGHT, SCREEN_WIDTH} from '../constants/utils';
 
 interface ContainerProps {
   children: JSX.Element;
