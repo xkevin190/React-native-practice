@@ -1,9 +1,10 @@
 import {APIService} from '../../services/ApiService';
 import {ActionTypes} from '../constants';
 
-export const getImages = () => async (dispatch: any) => {
+export const getImages = (type: string) => async (dispatch: any) => {
+  dispatch(setLoading(true));
   const result = await APIService({
-    url: 'https://api.reddit.com/r/pics/hot.json',
+    url: `https://api.reddit.com/r/pics/${type.toLowerCase()}.json`,
   });
 
   if (result.status === 200) {
@@ -12,20 +13,14 @@ export const getImages = () => async (dispatch: any) => {
       payload: result.data.data.children,
     });
   }
+  dispatch(setLoading(false));
 };
 
-export const getImageProfiles = (url: string) => async (dispatch: any) => {
-  const result = await APIService({
-    url: url,
-    query: '',
-  });
-
-  if (result.status === 200) {
-    dispatch({
-      type: ActionTypes.GET_PROFILE_ITEMS,
-      payload: result.data,
-    });
-  }
+const setLoading = (isLoading: boolean) => {
+  return {
+    type: ActionTypes.LOADING,
+    payload: isLoading,
+  };
 };
 
 export const clearProfileItems = () => {

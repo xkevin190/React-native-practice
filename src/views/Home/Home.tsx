@@ -9,21 +9,11 @@ import Header from '../../components/Header';
 import {ActionCreator} from 'redux';
 import {getImages} from '../../state/aplication/action';
 
-import Item from '../../components/Item';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import List from './List';
 
-interface HomeProps {
-  navigation: NavigationProps;
-  aplication: IAplicationState;
-  getItems: () => void;
-}
-
-const Home = (props: HomeProps) => {
+const Home = () => {
   const Tab = createMaterialTopTabNavigator();
-  React.useEffect(() => {
-    props.getItems();
-  }, []);
 
   return (
     <Container>
@@ -44,8 +34,4 @@ const mapStateToProps = (state: IState) => ({
   aplication: state.aplication,
 });
 
-const mapDispatchToProps = (dispatch: ActionCreator<any>) => ({
-  getItems: () => dispatch(getImages()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, null)(Home);

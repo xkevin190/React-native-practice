@@ -1,5 +1,5 @@
 import React, {memo} from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 import FastImage from 'react-native-fast-image';
 import {normalize, SCREEN_HEIGHT, SCREEN_WIDTH} from '../constants/utils';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -11,11 +11,14 @@ interface CardProps {
   num_comments: number;
   title: string;
   thumbnail: string;
+  action: (url: string) => void;
 }
 
 const Card = (props: CardProps) => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+      onPress={() => props.action('something')}
+      style={styles.container}>
       <View style={styles.TopContainer}>
         <Text style={styles.textType}>TECNOLOGY</Text>
         <Text style={styles.textSpam}>* {props.author}</Text>
@@ -47,7 +50,7 @@ const Card = (props: CardProps) => {
         </View>
         <Material size={normalize(18)} color="gray" name="gift" />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
