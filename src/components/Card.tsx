@@ -4,6 +4,7 @@ import FastImage from 'react-native-fast-image';
 import {normalize, SCREEN_HEIGHT, SCREEN_WIDTH} from '../constants/utils';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Material from 'react-native-vector-icons/Feather';
+import moment from 'moment';
 
 interface CardProps {
   author: string;
@@ -11,18 +12,22 @@ interface CardProps {
   num_comments: number;
   title: string;
   thumbnail: string;
+  url: string;
+  created: number;
   action: (url: string) => void;
 }
 
 const Card = (props: CardProps) => {
   return (
     <TouchableOpacity
-      onPress={() => props.action('something')}
+      onPress={() => props.action(props.url)}
       style={styles.container}>
       <View style={styles.TopContainer}>
         <Text style={styles.textType}>TECNOLOGY</Text>
         <Text style={styles.textSpam}>* {props.author}</Text>
-        <Text style={styles.textSpam}>* two days ago</Text>
+        <Text style={styles.textSpam}>
+          * {moment.unix(props.created).fromNow()}
+        </Text>
       </View>
       <View style={styles.bodyContainer}>
         <Text numberOfLines={2} style={styles.textTitle}>

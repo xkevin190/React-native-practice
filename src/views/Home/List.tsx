@@ -6,6 +6,7 @@ import {View, StyleSheet, FlatList, RefreshControl} from 'react-native';
 import {connect} from 'react-redux';
 import {ActionCreator} from 'redux';
 import Card from '../../components/Card';
+import {NavigationProps} from '../../constants/types';
 import {getImages} from '../../state/aplication/action';
 import {item as Item, ListItems} from '../../state/aplication/type';
 import {IState} from '../../state/root';
@@ -15,6 +16,7 @@ interface ListProps {
   route?: any;
   loadingApp?: boolean;
   getItems: (type: string) => void;
+  navigation: NavigationProps;
 }
 
 type renderItemProps = {
@@ -38,7 +40,7 @@ const List = (props: ListProps) => {
   );
 
   const navigate = (url: string) => {
-    console.log('executed', url);
+    props.navigation.navigate('post', {url: url});
   };
 
   const memoizedCallback = useCallback(navigate, []);
@@ -52,6 +54,8 @@ const List = (props: ListProps) => {
         title={item.data.title}
         thumbnail={item.data.thumbnail}
         action={memoizedCallback}
+        url={item.data.permalink}
+        created={item.data.created}
       />
     );
   };

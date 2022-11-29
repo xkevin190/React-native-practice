@@ -1,13 +1,8 @@
 import * as React from 'react';
-import {Text, View, StyleSheet, FlatList} from 'react-native';
 import {connect} from 'react-redux';
-import {NavigationProps} from '../../constants/types';
-import {IAplicationState, item} from '../../state/aplication/type';
 import {IState} from '../../state/root';
 import Container from '../../components/Container';
 import Header from '../../components/Header';
-import {ActionCreator} from 'redux';
-import {getImages} from '../../state/aplication/action';
 
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import List from './List';

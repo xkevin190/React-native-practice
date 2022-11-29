@@ -22,10 +22,3 @@ const setLoading = (isLoading: boolean) => {
     payload: isLoading,
   };
 };
-
-export const clearProfileItems = () => {
-  return {
-    type: ActionTypes.GET_PROFILE_ITEMS,
-    payload: [],
-  };
-};

@@ -12,6 +12,8 @@ export type item = {
     num_comments: number;
     title: string;
     thumbnail: string;
+    permalink: string;
+    created: number;
   };
 };
 
