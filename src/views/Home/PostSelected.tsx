@@ -14,7 +14,9 @@ const PostSelected = (props: PostSelectedProps) => {
   return (
     <View style={styles.container}>
       <Header back={true} navigation={props.navigation} />
-      <Webview source={{uri: `https://www.reddit.com${props.route.params.url!}`}} />
+      <Webview
+        source={{uri: `https://www.reddit.com${props.route.params.url!}`}}
+      />
     </View>
   );
 };
