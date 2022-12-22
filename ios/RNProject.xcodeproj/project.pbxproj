@@ -18,6 +18,7 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		97C64610DC134E52B98623D9 /* MuseoSans-100.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2CFC354A3CAC474BBE168BC6 /* MuseoSans-100.otf */; };
 		DAE4D3517E1A49689A5C7FEA /* MuseoSans_700.otf in Resources */ = {isa = PBXBuildFile; fileRef = BBD37589651945CBA8DB64CC /* MuseoSans_700.otf */; };
+		B7E26C1B4E634709B329ED68 /* Urbanist.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CC6AF2BA70A49A2B36D9AF6 /* Urbanist.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		BBD37589651945CBA8DB64CC /* MuseoSans_700.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = MuseoSans_700.otf; path = ../assets/fonts/MuseoSans_700.otf; sourceTree = "<group>"; };
 		BF614EDDA7434C23AA540773 /* MuseoSans_500.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = MuseoSans_500.otf; path = ../assets/fonts/MuseoSans_500.otf; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		4CC6AF2BA70A49A2B36D9AF6 /* Urbanist.ttf */ = {isa = PBXFileReference; name = "Urbanist.ttf"; path = "../assets/fonts/Urbanist.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				6E7EC639F566482B86EC8102 /* MuseoSans-300.otf */,
 				BF614EDDA7434C23AA540773 /* MuseoSans_500.otf */,
 				BBD37589651945CBA8DB64CC /* MuseoSans_700.otf */,
+				4CC6AF2BA70A49A2B36D9AF6 /* Urbanist.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				5F84918CA32E44F383BE3E64 /* MuseoSans-300.otf in Resources */,
 				21EFA9C9CD6A4D7D8B2A8156 /* MuseoSans_500.otf in Resources */,
 				DAE4D3517E1A49689A5C7FEA /* MuseoSans_700.otf in Resources */,
+				B7E26C1B4E634709B329ED68 /* Urbanist.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

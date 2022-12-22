@@ -1,38 +1,43 @@
 import * as React from 'react';
 import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 import {item} from '../state/aplication/type';
-import FastImage from 'react-native-fast-image';
-
+import Icon from 'react-native-vector-icons/Ionicons';
+import {colors} from '../constants/colors';
+import {normalize} from '../constants/utils';
 interface ItemProps {
-  item: item;
-  index: number;
+  gender: string;
+  name: string;
+  birth_year: string;
+  homeworld: string;
   action: (item: item, index: number) => void;
 }
 
-const getRandomInt = (max: number) => {
-  return Math.floor(Math.random() * max);
-};
-
 const Item = (props: ItemProps) => {
-  const IsPar = props.index % 2;
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => props.action(props.item, props.index)}>
-        <FastImage
-          style={[styles.item, !IsPar ? styles.itemPar : styles.itemImpar]}
-          source={{uri: props.item.urls.regular}}>
-          <FastImage
-            style={styles.imageOpacity}
-            source={require('../../assets/image/Rectangle.png')}>
-            <Text numberOfLines={1} style={styles.textTitle}>
-              {props.item.description || 'No avaliable description'}
-            </Text>
-            <Text numberOfLines={2} style={styles.textDescription}>
-              {`${getRandomInt(1000)} votos`}
-            </Text>
-          </FastImage>
-        </FastImage>
-      </TouchableOpacity>
+      <View style={styles.containerFavoriteIcon}>
+        <TouchableOpacity>
+          <Icon
+            size={normalize(15)}
+            color={colors.primary}
+            name="heart-outline"
+          />
+        </TouchableOpacity>
+      </View>
+      <Text style={styles.texTitle}>{props.name}</Text>
+      <Text style={styles.textSpam}>
+        {`${props.gender}  |  ${props.birth_year}`}
+      </Text>
+      <View style={styles.locationContainer}>
+        <Icon
+          color={colors.primary}
+          size={normalize(13)}
+          name="location-outline"
+        />
+        <Text style={[styles.texTitle, styles.locationText]}>
+          {props.homeworld}
+        </Text>
+      </View>
     </View>
   );
 };
@@ -41,34 +46,45 @@ export default Item;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    marginTop: 20,
+    marginHorizontal: 20,
+    borderBottomWidth: 1,
+    paddingBottom: 20,
+    borderBottomColor: colors.separator,
+  },
+  texTitle: {
+    fontFamily: 'Urbanist',
+    color: colors.primary,
+    fontSize: normalize(13),
+    fontWeight: '600',
   },
 
-  itemPar: {},
-  itemImpar: {
-    marginLeft: 10,
-    marginTop: 20,
+  containerFavoriteIcon: {
+    alignItems: 'flex-end',
+    bottom: -10,
   },
-  imageOpacity: {
-    width: '100%',
-    height: '30%',
-    paddingTop: 20,
-    paddingLeft: 10,
+
+  textSpam: {
+    paddingTop: 10,
+    fontFamily: 'Urbanist',
+    color: colors.textSpam,
+    fontSize: normalize(12),
+    fontWeight: '400',
   },
-  textTitle: {
-    fontFamily: 'MuseoSans-500',
-    color: '#FFFFFF',
+  locationContainer: {
+    flexDirection: 'row',
+    marginTop: 10,
+    backgroundColor: colors.secondary,
+    width: '30%',
+    paddingVertical: 3,
+    paddingHorizontal: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 6,
   },
-  textDescription: {
-    fontFamily: 'MuseoSans-500',
-    color: '#FFFFFF',
-    fontSize: 10,
-    paddingTop: 5,
-  },
-  item: {
-    width: 155,
-    height: 218,
-    borderRadius: 10,
-    justifyContent: 'flex-end',
+
+  locationText: {
+    fontSize: normalize(12),
+    paddingLeft: 3,
   },
 });

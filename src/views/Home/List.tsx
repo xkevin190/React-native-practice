@@ -6,10 +6,10 @@ import {View, StyleSheet, FlatList, RefreshControl} from 'react-native';
 import {connect} from 'react-redux';
 import {ActionCreator} from 'redux';
 import Card from '../../components/Card';
+import Item from '../../components/Item';
 import {NavigationProps} from '../../constants/types';
 import {getImages} from '../../state/aplication/action';
-import {item as Item, ListItems} from '../../state/aplication/type';
-import {IState} from '../../state/root';
+import {item as IItem, ListItems} from '../../state/aplication/type';
 
 interface ListProps {
   ListItems?: ListItems;
@@ -20,25 +20,13 @@ interface ListProps {
 }
 
 type renderItemProps = {
-  item: Item;
+  item: IItem;
   index: number;
 };
 
-const keyExtractor = (_item: Item) => _item.data.id;
+const keyExtractor = (_item: IItem) => _item.name;
 
 const List = (props: ListProps) => {
-  const getPost = () => {
-    const type: string =
-      props.route.name !== 'Popular' ? props.route.name : 'rising';
-    props.getItems(type);
-  };
-
-  useFocusEffect(
-    React.useCallback(() => {
-      getPost();
-    }, [props.route]),
-  );
-
   const navigate = (url: string) => {
     props.navigation.navigate('post', {url: url});
   };
@@ -47,51 +35,27 @@ const List = (props: ListProps) => {
 
   const renderItem = ({item}: renderItemProps): JSX.Element => {
     return (
-      <Card
-        author={item.data.author}
-        ups={item.data.ups}
-        num_comments={item.data.num_comments}
-        title={item.data.title}
-        thumbnail={item.data.thumbnail}
-        action={memoizedCallback}
-        url={item.data.permalink}
-        created={item.data.created}
+      <Item
+        gender={item.gender}
+        name={item.name}
+        homeworld={item.homeworld}
+        birth_year={item.birth_year}
       />
     );
   };
 
   return (
-    <View style={styles.container}>
-      <FlatList
-        data={props.ListItems}
-        keyExtractor={keyExtractor}
-        renderItem={renderItem}
-        removeClippedSubviews={true}
-        initialNumToRender={4}
-        extraData={navigate}
-        refreshControl={
-          <RefreshControl
-            refreshing={props.loadingApp!}
-            onRefresh={() => {
-              getPost();
-            }}
-          />
-        }
-      />
-    </View>
+    <FlatList
+      data={props.ListItems}
+      keyExtractor={keyExtractor}
+      renderItem={renderItem}
+      removeClippedSubviews={true}
+      initialNumToRender={4}
+    />
   );
 };
 
-const mapStateToProps = (state: IState) => ({
-  ListItems: state.aplication.items,
-  loadingApp: state.aplication.loading,
-});
-
-const mapDispatchToProps = (dispatch: ActionCreator<any>) => ({
-  getItems: (type: string) => dispatch(getImages(type)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(List);
+export default List;
 
 const styles = StyleSheet.create({
   container: {

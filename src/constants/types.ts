@@ -1,5 +1,4 @@
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
-type RootStackParamList = any;
 
-export type NavigationProps = NativeStackNavigationProp<RootStackParamList>;
+export type NavigationProps = NativeStackNavigationProp<any, any>;

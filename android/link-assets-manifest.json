@@ -16,6 +16,10 @@
     {
       "path": "assets/fonts/MuseoSans_700.otf",
       "sha1": "68a9fdbae63e4802020ac1c5b82515c77bc5399d"
+    },
+    {
+      "path": "assets/fonts/Urbanist.ttf",
+      "sha1": "119cc4d8a61b74b6780202944c010cb0b2a5ad0e"
     }
   ]
 }

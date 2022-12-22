@@ -1,20 +1,14 @@
 export interface IAplicationState {
   loading: boolean;
   items: ListItems;
-  profileItems: ListItems;
+  favorites: ListItems;
 }
 
 export type item = {
-  data: {
-    id: string;
-    author: string;
-    ups: number;
-    num_comments: number;
-    title: string;
-    thumbnail: string;
-    permalink: string;
-    created: number;
-  };
+  gender: string;
+  name: string;
+  birth_year: string;
+  homeworld: string;
 };
 
 export type ListItems = Array<item>;
