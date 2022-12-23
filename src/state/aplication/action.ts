@@ -33,9 +33,17 @@ const getUserPlanetAndParse = async (data: ListItems) => {
         name: element.name,
         birth_year: element.birth_year,
         homeworld: getPlanet.data.name,
+        favorite: false,
       });
     }),
   );
 
   return parsedData;
+};
+
+export const setFavorite = (name: string) => {
+  return {
+    type: ActionTypes.SET_FAVORITE,
+    payload: name,
+  };
 };

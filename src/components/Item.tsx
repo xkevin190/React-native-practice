@@ -9,18 +9,19 @@ interface ItemProps {
   name: string;
   birth_year: string;
   homeworld: string;
-  action: (item: item, index: number) => void;
+  favorite: string;
+  action: (name: string) => void;
 }
 
 const Item = (props: ItemProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.containerFavoriteIcon}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => props.action(props.name)}>
           <Icon
             size={normalize(15)}
             color={colors.primary}
-            name="heart-outline"
+            name={props.favorite ? 'heart' : 'heart-outline'}
           />
         </TouchableOpacity>
       </View>
@@ -42,7 +43,7 @@ const Item = (props: ItemProps) => {
   );
 };
 
-export default Item;
+export default React.memo(Item);
 
 const styles = StyleSheet.create({
   container: {

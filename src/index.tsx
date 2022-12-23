@@ -2,13 +2,10 @@ import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from './views/Home';
-import PostSelected from './views/Home/PostSelected';
-import {
-  createDrawerNavigator,
-  DrawerContentComponentProps,
-} from '@react-navigation/drawer';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 import DrawerMenu from './components/Drawer';
 import {SCREEN_WIDTH} from './constants/utils';
+import Favorites from './views/Home/Favorites';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -20,13 +17,11 @@ const DrawerNavigator = () => (
       drawerStyle: {width: SCREEN_WIDTH},
     }}
     initialRouteName="Home"
-    drawerContent={(
-      props: DrawerContentComponentProps<DrawerContentOptions>,
-    ) => {
+    drawerContent={(props: any) => {
       return <DrawerMenu {...props} />;
     }}>
     <Stack.Screen name="Home" component={Home} />
-    {/* <Stack.Screen name="post" component={PostSelected} /> */}
+    <Stack.Screen name="Favorites" component={Favorites} />
   </Drawer.Navigator>
 );
 

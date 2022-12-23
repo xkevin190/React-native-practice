@@ -24,6 +24,18 @@ export const AplicationReducer = (
         items: action.payload,
       };
     }
+    case ActionTypes.SET_FAVORITE: {
+      const index = state.items.findIndex(item => {
+        return item.name === action.payload;
+      });
+
+      state.items[index].favorite = !state.items[index].favorite;
+
+      return {
+        ...state,
+        items: state.items.slice(),
+      };
+    }
     default: {
       return state;
     }

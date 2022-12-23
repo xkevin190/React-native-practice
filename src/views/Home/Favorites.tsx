@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useState} from 'react';
 import {connect} from 'react-redux';
 import {IState} from '../../state/root';
 import Container from '../../components/Container';
@@ -9,26 +9,30 @@ import {getImages, setFavorite} from '../../state/aplication/action';
 import {NavigationProps} from '../../constants/types';
 import {ListItems} from '../../state/aplication/type';
 import List from './List';
+import Input from '../../components/TextInput';
 
-interface HomeProps {
+interface FavoritesProps {
   navigation?: NavigationProps;
-  getItems: () => void;
   listItems: ListItems;
   _setFavorite: (name: string) => void;
 }
 
-const Home = ({navigation, getItems, listItems, _setFavorite}: HomeProps) => {
-  useEffect(() => {
-    getItems();
-  }, []);
+const Favorites = ({navigation, listItems, _setFavorite}: FavoritesProps) => {
+  const [search, setSearch] = useState('');
+  const favorites = listItems.filter(item => {
+    return (
+      item.name.toLowerCase().includes(search.toLowerCase()) && item.favorite
+    );
+  });
 
   return (
     <Container>
       <View>
-        <Header navigation={navigation} title={'characters'} />
+        <Header navigation={navigation} title={'Favorites'} />
+        <Input onchange={text => setSearch(text)} />
         <List
           setFavorite={_setFavorite}
-          ListItems={listItems}
+          ListItems={favorites}
           navigation={navigation!}
         />
       </View>
@@ -45,4 +49,4 @@ const mapDispatchToProps = (dispatch: ActionCreator<any>) => ({
   _setFavorite: (name: string) => dispatch(setFavorite(name)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Favorites);

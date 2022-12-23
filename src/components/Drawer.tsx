@@ -32,7 +32,7 @@ const Drawer = ({navigation}: DrawerProps) => {
         onPress={() => navigate('Home')}>
         <Text style={styles.textItem}>Characters</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.itemContainer}>
+      <TouchableOpacity style={styles.itemContainer} onPress={() => navigate('Favorites')}>
         <Text style={styles.textItem}>Favorites</Text>
       </TouchableOpacity>
     </SafeAreaView>

@@ -9,6 +9,7 @@ export type item = {
   name: string;
   birth_year: string;
   homeworld: string;
+  favorite?: boolean;
 };
 
 export type ListItems = Array<item>;
