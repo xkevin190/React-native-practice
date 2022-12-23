@@ -17,8 +17,8 @@
 		7699B88040F8A987B510C191 /* libPods-RNProject-RNProjectTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-RNProject-RNProjectTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		97C64610DC134E52B98623D9 /* MuseoSans-100.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2CFC354A3CAC474BBE168BC6 /* MuseoSans-100.otf */; };
-		DAE4D3517E1A49689A5C7FEA /* MuseoSans_700.otf in Resources */ = {isa = PBXBuildFile; fileRef = BBD37589651945CBA8DB64CC /* MuseoSans_700.otf */; };
 		B7E26C1B4E634709B329ED68 /* Urbanist.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CC6AF2BA70A49A2B36D9AF6 /* Urbanist.ttf */; };
+		DAE4D3517E1A49689A5C7FEA /* MuseoSans_700.otf in Resources */ = {isa = PBXBuildFile; fileRef = BBD37589651945CBA8DB64CC /* MuseoSans_700.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +44,7 @@
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-RNProject-RNProjectTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNProject-RNProjectTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CFC354A3CAC474BBE168BC6 /* MuseoSans-100.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "MuseoSans-100.otf"; path = "../assets/fonts/MuseoSans-100.otf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-RNProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNProject.debug.xcconfig"; path = "Target Support Files/Pods-RNProject/Pods-RNProject.debug.xcconfig"; sourceTree = "<group>"; };
+		4CC6AF2BA70A49A2B36D9AF6 /* Urbanist.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Urbanist.ttf; path = ../assets/fonts/Urbanist.ttf; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-RNProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNProject.release.xcconfig"; path = "Target Support Files/Pods-RNProject/Pods-RNProject.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-RNProject-RNProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNProject-RNProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-RNProject-RNProjectTests/Pods-RNProject-RNProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-RNProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,7 +54,6 @@
 		BBD37589651945CBA8DB64CC /* MuseoSans_700.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = MuseoSans_700.otf; path = ../assets/fonts/MuseoSans_700.otf; sourceTree = "<group>"; };
 		BF614EDDA7434C23AA540773 /* MuseoSans_500.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = MuseoSans_500.otf; path = ../assets/fonts/MuseoSans_500.otf; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		4CC6AF2BA70A49A2B36D9AF6 /* Urbanist.ttf */ = {isa = PBXFileReference; name = "Urbanist.ttf"; path = "../assets/fonts/Urbanist.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

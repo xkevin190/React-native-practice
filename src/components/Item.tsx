@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
-import {item} from '../state/aplication/type';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {colors} from '../constants/colors';
 import {normalize} from '../constants/utils';
@@ -9,7 +8,7 @@ interface ItemProps {
   name: string;
   birth_year: string;
   homeworld: string;
-  favorite: string;
+  favorite?: string;
   action: (name: string) => void;
 }
 
@@ -17,7 +16,10 @@ const Item = (props: ItemProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.containerFavoriteIcon}>
-        <TouchableOpacity onPress={() => props.action(props.name)}>
+        <Text style={styles.texTitle}>{props.name}</Text>
+        <TouchableOpacity
+          style={styles.favoriteButton}
+          onPress={() => props.action(props.name)}>
           <Icon
             size={normalize(15)}
             color={colors.primary}
@@ -25,7 +27,6 @@ const Item = (props: ItemProps) => {
           />
         </TouchableOpacity>
       </View>
-      <Text style={styles.texTitle}>{props.name}</Text>
       <Text style={styles.textSpam}>
         {`${props.gender}  |  ${props.birth_year}`}
       </Text>
@@ -61,8 +62,8 @@ const styles = StyleSheet.create({
   },
 
   containerFavoriteIcon: {
-    alignItems: 'flex-end',
-    bottom: -10,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
 
   textSpam: {
@@ -87,5 +88,9 @@ const styles = StyleSheet.create({
   locationText: {
     fontSize: normalize(12),
     paddingLeft: 3,
+  },
+  favoriteButton: {
+    width: 40,
+    alignItems: 'center',
   },
 });

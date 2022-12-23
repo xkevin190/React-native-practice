@@ -1,7 +1,7 @@
 import * as React from 'react';
-import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {Text, View, StyleSheet, StatusBar, TouchableOpacity} from 'react-native';
 import {NavigationProps} from '../constants/types';
-import {normalize, SCREEN_WIDTH} from '../constants/utils';
+import {normalize, SCREEN_HEIGHT, SCREEN_WIDTH} from '../constants/utils';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {colors} from '../constants/colors';
 
@@ -18,6 +18,7 @@ const Header = (props: headerProps) => {
 
   return (
     <View style={styles.container}>
+      <StatusBar backgroundColor={colors.background}/>
       <TouchableOpacity onPress={goToback}>
         {!props.back && (
           <Icon color={colors.primary} name="menu" size={normalize(23)} />
@@ -40,6 +41,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: SCREEN_WIDTH * 0.04,
+    height: SCREEN_HEIGHT * 0.06,
   },
   TextHeader: {
     fontFamily: 'Urbanist',
