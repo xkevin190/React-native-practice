@@ -24,6 +24,12 @@ yarn install
   
 ```
 
+4) to run unit tests 
 
-https://user-images.githubusercontent.com/37220428/204870666-9967ac07-c8d9-4e2f-b07f-fb2e207840f6.mp4
+```
+  yarn test
+```
+
+
+https://user-images.githubusercontent.com/37220428/209443842-b62550ff-ce0f-4ec7-9b39-fcd203443c0c.mp4
 
