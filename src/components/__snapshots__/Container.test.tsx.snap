@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container (Unit-Test) general functionality should match snapshot 1`] = `
+<ForwardRef(SafeAreaView)
+  style={
+    Object {
+      "backgroundColor": "#17141f",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#17141f",
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      testID="children"
+    />
+  </View>
+</ForwardRef(SafeAreaView)>
+`;
+
+exports[`Container (Unit-Test) should match snapshot 1`] = `
+<ForwardRef(SafeAreaView)
+  style={
+    Object {
+      "backgroundColor": "#17141f",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#17141f",
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      testID="children"
+    />
+  </View>
+</ForwardRef(SafeAreaView)>
+`;

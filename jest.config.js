@@ -14,13 +14,16 @@ module.exports = {
       statements: 95,
     },
   },
-  testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(test}).[jt]s?(x)'],
+  testMatch: [
+    '**/__tests__/**/*.[jt]s?(x)',
+    `**/?(*.)+(${process.env.TEST ? process.env.TEST : 'test'}).[jt]s?(x)`,
+  ],
   collectCoverageFrom: [
     '<rootDir>/src/**/*.{ts,tsx}',
     '!<rootDir>/src/**/styles.ts',
     '!<rootDir>/src/**/index.ts',
     '!<rootDir>/src/**/*.d.ts',
-    '!<rootDir>/src/**/*.test.{ts,tsx}',
+    `!<rootDir>/src/**/*.${process.env.TEST ? 'spec' : 'test'}.{ts,tsx}`,
   ],
   transformIgnorePatterns: [
     'node_modules/(?!(jest-)?react-native|@react-native|@react-navigation)',

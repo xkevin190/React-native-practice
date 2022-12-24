@@ -6,4 +6,4 @@ import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
  *
  * Update enzyme to support react 18
  */
-Enzyme.configure({ adapter: new Adapter() });
+Enzyme.configure({adapter: new Adapter()});
