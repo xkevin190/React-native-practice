@@ -1,6 +1,6 @@
-import * as React from 'react';
-import {StyleSheet, SafeAreaView, View, Platform} from 'react-native';
-import { colors } from '../constants/colors';
+import React from 'react';
+import {StyleSheet, SafeAreaView, View} from 'react-native';
+import {colors} from '../constants/colors';
 
 interface ContainerProps {
   children: JSX.Element;
