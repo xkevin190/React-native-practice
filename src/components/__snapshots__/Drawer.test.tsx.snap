@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Drawer (Unit-Test) should match snapshot 1`] = `
+<ForwardRef(SafeAreaView)
+  style={
+    Object {
+      "backgroundColor": "#17141f",
+      "flex": 1,
+    }
+  }
+>
+  <TouchableOpacity
+    activeOpacity={0.2}
+    delayLongPress={600}
+    extraButtonProps={
+      Object {
+        "exclusive": true,
+        "rippleColor": "transparent",
+      }
+    }
+    onPress={[Function]}
+  >
+    <Icon
+      allowFontScaling={false}
+      color="#ffffff"
+      name="close"
+      size={57}
+      style={
+        Object {
+          "marginBottom": 10,
+          "marginHorizontal": 20,
+        }
+      }
+    />
+  </TouchableOpacity>
+  <TouchableOpacity
+    activeOpacity={0.2}
+    delayLongPress={600}
+    extraButtonProps={
+      Object {
+        "exclusive": true,
+        "rippleColor": "transparent",
+      }
+    }
+    onPress={[Function]}
+    style={
+      Object {
+        "marginHorizontal": 45,
+        "marginTop": 40,
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#ffffff",
+          "fontFamily": "Urbanist",
+          "fontSize": 45,
+          "fontWeight": "600",
+        }
+      }
+    >
+      Characters
+    </Text>
+  </TouchableOpacity>
+  <TouchableOpacity
+    activeOpacity={0.2}
+    delayLongPress={600}
+    extraButtonProps={
+      Object {
+        "exclusive": true,
+        "rippleColor": "transparent",
+      }
+    }
+    onPress={[Function]}
+    style={
+      Object {
+        "marginHorizontal": 45,
+        "marginTop": 40,
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#ffffff",
+          "fontFamily": "Urbanist",
+          "fontSize": 45,
+          "fontWeight": "600",
+        }
+      }
+    >
+      Favorites
+    </Text>
+  </TouchableOpacity>
+</ForwardRef(SafeAreaView)>
+`;

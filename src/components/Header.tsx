@@ -1,5 +1,11 @@
 import * as React from 'react';
-import {Text, View, StyleSheet, StatusBar, TouchableOpacity} from 'react-native';
+import {
+  Text,
+  View,
+  StyleSheet,
+  StatusBar,
+  TouchableOpacity,
+} from 'react-native';
 import {NavigationProps} from '../constants/types';
 import {normalize, SCREEN_HEIGHT, SCREEN_WIDTH} from '../constants/utils';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -18,11 +24,9 @@ const Header = (props: headerProps) => {
 
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor={colors.background}/>
+      <StatusBar backgroundColor={colors.background} />
       <TouchableOpacity onPress={goToback}>
-        {!props.back && (
-          <Icon color={colors.primary} name="menu" size={normalize(23)} />
-        )}
+        <Icon color={colors.primary} name="menu" size={normalize(23)} />
       </TouchableOpacity>
       <View>
         <Text style={styles.TextHeader}>{props.title}</Text>
