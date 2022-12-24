@@ -1,6 +1,6 @@
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import * as React from 'react';
-import {Text, View, StyleSheet, SafeAreaView} from 'react-native';
+import React, { useEffect } from 'react';
+import {Text, StyleSheet, SafeAreaView} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {colors} from '../constants/colors';

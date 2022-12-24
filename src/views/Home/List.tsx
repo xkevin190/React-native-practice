@@ -10,7 +10,6 @@ interface ListProps {
   route?: any;
   loadingApp?: boolean;
   setFavorite: (name: string) => void;
-  navigation: NavigationProps;
 }
 
 type renderItemProps = {
@@ -52,9 +51,3 @@ const List = (props: ListProps) => {
 };
 
 export default List;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});

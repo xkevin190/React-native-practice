@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextInput (Unit-Test) should match snapshot 1`] = `
+<TextInput
+  onChangeText={[Function]}
+  placeholder="writte here"
+  style={
+    Object {
+      "borderColor": "#ffffff",
+      "borderRadius": 14,
+      "borderWidth": 0.8,
+      "color": "#ffffff",
+      "fontSize": 15,
+      "height": 73.37,
+      "marginHorizontal": 20,
+      "marginTop": 40.019999999999996,
+      "paddingHorizontal": 20,
+    }
+  }
+/>
+`;

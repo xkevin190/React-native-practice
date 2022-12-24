@@ -3,17 +3,6 @@ module.exports = {
   setupFiles: ['<rootDir>/config/enzyme.ts'],
   setupFilesAfterEnv: ['<rootDir>/config/jest.setup.ts'],
   snapshotSerializers: ['enzyme-to-json/serializer'],
-  collectCoverage: true,
-  coverageReporters: ['lcov', 'text', 'text-summary'],
-  coverageDirectory: 'coverage',
-  coverageThreshold: {
-    global: {
-      branches: 90,
-      functions: 90,
-      lines: 95,
-      statements: 95,
-    },
-  },
   testMatch: [
     '**/__tests__/**/*.[jt]s?(x)',
     `**/?(*.)+(${process.env.TEST ? process.env.TEST : 'test'}).[jt]s?(x)`,

@@ -8,7 +8,7 @@ interface ItemProps {
   name: string;
   birth_year: string;
   homeworld: string;
-  favorite?: string;
+  favorite?: boolean;
   action: (name: string) => void;
 }
 

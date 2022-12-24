@@ -44,6 +44,7 @@
     "react-native-webview": "^11.25.0",
     "react-redux": "^8.0.2",
     "redux": "^4.2.0",
+    "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.4.1",
     "unsplash-js": "^7.0.15",
     "yarn": "^1.22.19"

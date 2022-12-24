@@ -1,7 +1,9 @@
 import React from 'react';
 import {shallow, ShallowWrapper} from 'enzyme';
 import Drawer from './Drawer';
-import {View} from 'react-native';
+import enableHooks from 'jest-react-hooks-shallow';
+
+
 
 describe('Drawer (Unit-Test)', () => {
   let wrapper: ShallowWrapper;
@@ -25,13 +27,11 @@ describe('Drawer (Unit-Test)', () => {
   });
 
   it(' should navigate to "Characters" screen', () => {
-    console.log(wrapper.debug());
     wrapper.find('TouchableOpacity').at(1).simulate('press');
     expect(navigation.navigate).toBeCalledWith('Home');
   });
 
   it(' should navigate to "Favorites" screen', () => {
-    console.log(wrapper.debug());
     wrapper.find('TouchableOpacity').at(2).simulate('press');
     expect(navigation.navigate).toBeCalledWith('Favorites');
   });

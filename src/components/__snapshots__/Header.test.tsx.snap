@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header (Unit-Test) should match snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#17141f",
+      "flexDirection": "row",
+      "height": 80.03999999999999,
+      "justifyContent": "space-between",
+      "paddingHorizontal": 30,
+    }
+  }
+>
+  <StatusBar
+    backgroundColor="#17141f"
+  />
+  <TouchableOpacity
+    onPress={[Function]}
+  >
+    <Icon
+      allowFontScaling={false}
+      color="#ffffff"
+      name="menu"
+      size={52}
+    />
+  </TouchableOpacity>
+  <View>
+    <Text
+      style={
+        Object {
+          "color": "#ffffff",
+          "fontFamily": "Urbanist",
+          "fontSize": 45,
+          "fontWeight": "600",
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "paddingRight": 30,
+      }
+    }
+  />
+</View>
+`;

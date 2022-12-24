@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
 import {IState} from '../../state/root';
 import Container from '../../components/Container';
@@ -18,7 +18,7 @@ interface HomeProps {
 }
 
 const Home = ({navigation, getItems, listItems, _setFavorite}: HomeProps) => {
-  useEffect(() => {
+  React.useEffect(() => {
     getItems();
   }, []);
 
@@ -35,14 +35,18 @@ const Home = ({navigation, getItems, listItems, _setFavorite}: HomeProps) => {
     </Container>
   );
 };
-const mapStateToProps = (state: IState) => ({
-  listItems: state.aplication.items,
-  loadingApp: state.aplication.loading,
-});
+const mapStateToProps = (state: IState) => {
+  return {
+    listItems: state.aplication.items,
+    loadingApp: state.aplication.loading,
+  };
+};
 
-const mapDispatchToProps = (dispatch: ActionCreator<any>) => ({
-  getItems: (type: number) => dispatch(getImages(type)),
-  _setFavorite: (name: string) => dispatch(setFavorite(name)),
-});
+function mapDispatchToProps(dispatch: ActionCreator<any>) {
+  return {
+    getItems: (type: number) => dispatch(getImages(type)),
+    _setFavorite: (name: string) => dispatch(setFavorite(name)),
+  };
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

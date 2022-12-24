@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List (Unit-Test) should match snapshot 1`] = `
+<FlatList
+  data={
+    Array [
+      Object {
+        "birth_year": "test",
+        "favorite": false,
+        "gender": "test",
+        "homeworld": "test",
+        "name": "test",
+      },
+    ]
+  }
+  initialNumToRender={4}
+  keyExtractor={[Function]}
+  removeClippedSubviews={true}
+  renderItem={[Function]}
+/>
+`;

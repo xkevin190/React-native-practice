@@ -12,10 +12,10 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import {colors} from '../constants/colors';
 
 type headerProps = {
-  back?: boolean;
   navigation?: NavigationProps;
   title: string;
 };
+
 
 const Header = (props: headerProps) => {
   const goToback = () => {
