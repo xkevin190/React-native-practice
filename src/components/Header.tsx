@@ -1,34 +1,37 @@
 import * as React from 'react';
-import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {
+  Text,
+  View,
+  StyleSheet,
+  StatusBar,
+  TouchableOpacity,
+} from 'react-native';
 import {NavigationProps} from '../constants/types';
-import {normalize, SCREEN_WIDTH} from '../constants/utils';
+import {normalize, SCREEN_HEIGHT, SCREEN_WIDTH} from '../constants/utils';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {colors} from '../constants/colors';
 
 type headerProps = {
-  back?: boolean;
   navigation?: NavigationProps;
+  title: string;
 };
+
 
 const Header = (props: headerProps) => {
   const goToback = () => {
-    if (props.back) {
-      props.navigation?.goBack();
-    }
+    props.navigation.openDrawer();
   };
 
   return (
     <View style={styles.container}>
+      <StatusBar backgroundColor={colors.background} />
       <TouchableOpacity onPress={goToback}>
-        {!props.back && (
-          <Image source={require('../../assets/image/Menu.png')} />
-        )}
-
-        {props.back && <Icon name="arrow-back" size={normalize(20)} />}
+        <Icon color={colors.primary} name="menu" size={normalize(23)} />
       </TouchableOpacity>
       <View>
-        <Text style={styles.TextHeader}>Reddit</Text>
+        <Text style={styles.TextHeader}>{props.title}</Text>
       </View>
-      <View />
+      <View style={{paddingRight: SCREEN_WIDTH * 0.04}} />
     </View>
   );
 };
@@ -37,15 +40,17 @@ export default Header;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
+    backgroundColor: colors.background,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: SCREEN_WIDTH * 0.067,
+    paddingHorizontal: SCREEN_WIDTH * 0.04,
+    height: SCREEN_HEIGHT * 0.06,
   },
   TextHeader: {
+    fontFamily: 'Urbanist',
     fontSize: normalize(20),
-    fontWeight: 'bold',
-    fontFamily: 'MuseoSans-500',
+    fontWeight: '600',
+    color: colors.primary,
   },
 });

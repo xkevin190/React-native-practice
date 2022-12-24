@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home (Unit-Test) should match snapshot 1`] = `
+<ContextProvider
+  value={null}
+>
+  <Home
+    _setFavorite={[Function]}
+    getItems={[Function]}
+    listItems={
+      Array [
+        Object {
+          "birth_year": "test",
+          "favorite": false,
+          "gender": "test",
+          "homeworld": "test",
+          "name": "test",
+        },
+      ]
+    }
+    store={
+      Object {
+        "dispatch": [MockFunction],
+        "getState": [MockFunction] {
+          "calls": Array [
+            Array [],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": Object {
+                "aplication": Object {
+                  "items": Array [
+                    Object {
+                      "birth_year": "test",
+                      "favorite": false,
+                      "gender": "test",
+                      "homeworld": "test",
+                      "name": "test",
+                    },
+                  ],
+                },
+              },
+            },
+          ],
+        },
+      }
+    }
+  />
+</ContextProvider>
+`;

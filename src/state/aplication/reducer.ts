@@ -4,7 +4,7 @@ import {IAplicationState, Payload, ListItems} from './type';
 const AplicationState = {
   loading: false,
   items: [],
-  profileItems: [],
+  favorites: [],
 };
 
 export const AplicationReducer = (
@@ -24,10 +24,16 @@ export const AplicationReducer = (
         items: action.payload,
       };
     }
-    case ActionTypes.GET_PROFILE_ITEMS: {
+    case ActionTypes.SET_FAVORITE: {
+      const index = state.items.findIndex(item => {
+        return item.name === action.payload;
+      });
+
+      state.items[index].favorite = !state.items[index].favorite;
+
       return {
         ...state,
-        profileItems: action.payload,
+        items: state.items.slice(),
       };
     }
     default: {

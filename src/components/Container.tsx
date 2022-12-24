@@ -1,5 +1,6 @@
-import * as React from 'react';
-import {StyleSheet, SafeAreaView, View, Platform} from 'react-native';
+import React from 'react';
+import {StyleSheet, SafeAreaView, View} from 'react-native';
+import {colors} from '../constants/colors';
 
 interface ContainerProps {
   children: JSX.Element;
@@ -20,5 +21,6 @@ export default Container;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: colors.background,
   },
 });

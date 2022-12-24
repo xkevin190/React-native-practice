@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Item (Unit-Test) should match snapshot 1`] = `
+<View
+  style={
+    Object {
+      "borderBottomColor": "#463B5E",
+      "borderBottomWidth": 1,
+      "marginHorizontal": 20,
+      "marginTop": 20,
+      "paddingBottom": 20,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#ffffff",
+          "fontFamily": "Urbanist",
+          "fontSize": 29,
+          "fontWeight": "600",
+        }
+      }
+    >
+      test
+    </Text>
+    <TouchableOpacity
+      onPress={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "width": 40,
+        }
+      }
+    >
+      <Icon
+        allowFontScaling={false}
+        color="#ffffff"
+        name="heart-outline"
+        size={33}
+      />
+    </TouchableOpacity>
+  </View>
+  <Text
+    style={
+      Object {
+        "color": "rgba(255, 255, 255, 0.7)",
+        "fontFamily": "Urbanist",
+        "fontSize": 26,
+        "fontWeight": "400",
+        "paddingTop": 10,
+      }
+    }
+  >
+    test  |  test
+  </Text>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#2f2a35",
+        "borderRadius": 6,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "marginTop": 10,
+        "paddingHorizontal": 8,
+        "paddingVertical": 3,
+        "width": "30%",
+      }
+    }
+  >
+    <Icon
+      allowFontScaling={false}
+      color="#ffffff"
+      name="location-outline"
+      size={29}
+    />
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "fontFamily": "Urbanist",
+            "fontSize": 29,
+            "fontWeight": "600",
+          },
+          Object {
+            "fontSize": 26,
+            "paddingLeft": 3,
+          },
+        ]
+      }
+    >
+      test
+    </Text>
+  </View>
+</View>
+`;
